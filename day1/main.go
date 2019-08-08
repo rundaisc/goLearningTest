@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unicode/utf8"
+)
 
 func main() {
 	First()
@@ -61,4 +64,71 @@ func FizzBuzz(number int) {
 	fmt.Println()
 	fmt.Println("FizzBuzz func end")
 
+}
+
+//PrintA 建立一个 Go 程序打印下面的内容（到 100 个字符）：  A
+// AA
+// AAA
+// AAAA
+// AAAAA
+// AAAAAA
+// AAAAAAA
+func PrintA(number int) {
+	a := "A"
+	for i := 0; i < number; i++ {
+		fmt.Println(a)
+		a = a + "A"
+	}
+}
+
+//CountStr 建立一个程序统计字符串里的字符数量：
+// asSASA ddd dsjkdsjs dk你好
+// 同时输出这个字符串的字节数。
+func CountStr() {
+	str := "asSASA ddd dsjkdsjs dk你好"
+	strRune := []rune(str)
+	fmt.Printf("len长度为:%d\n", len(str))
+	fmt.Printf("rune长度为:%d\n", len(strRune))
+	fmt.Printf("RuneCountInString长度为:%d\n", utf8.RuneCountInString(str))
+}
+
+//ChangeStr 扩展/修改上一个问题的程序，替换位置 4 开始的三个字符为 “abc”。
+func ChangeStr() {
+	str := "asSASA ddd dsjkdsjs dk你好"
+	strRune := []rune(str)
+	strRune[3] = 'a'
+	strRune[4] = 'b'
+	strRune[5] = 'c'
+	cStr := string(strRune)
+	fmt.Println(cStr)
+}
+
+//ReverseStr  编写一个 Go 程序可以逆转字符串，例如 “foobar” 被打印成 “raboof”
+func ReverseStr(str string) {
+	rs := []rune(str)
+	// 第一种
+	var newStr string
+	for i := len(rs) - 1; i >= 0; i-- {
+
+		newStr = newStr + string(rs[i])
+	}
+	fmt.Println(newStr)
+	// 第二种
+	var newStr2 []rune
+
+	for i := len(rs) - 1; i >= 0; i-- {
+		newStr2 = append(newStr2, rs[i])
+	}
+	fmt.Println(string(newStr2))
+
+}
+
+// AverageSlice 编写计算一个类型是 float64 的 slice 的平均值的代码。
+func AverageSlice() {
+	s := []float64{103.44, 20.07, 14.11, 1.01}
+	var total float64
+	for _, v := range s {
+		total += v
+	}
+	fmt.Println(total / float64(len(s)))
 }
