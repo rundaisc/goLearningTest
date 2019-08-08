@@ -12,6 +12,7 @@ func TestSecond(t *testing.T) {
 func TestThird(t *testing.T) {
 	Third()
 }
+
 func TestFizzBuzz(t *testing.T) {
 	FizzBuzz(100)
 }
