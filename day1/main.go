@@ -96,10 +96,15 @@ func CountStr() {
 func ChangeStr() {
 	str := "asSASA ddd dsjkdsjs dk你好"
 	strRune := []rune(str)
-	strRune[3] = 'a'
-	strRune[4] = 'b'
-	strRune[5] = 'c'
+	//第一种
+	// strRune[4] = 'a'
+	// strRune[5] = 'b'
+	// strRune[6] = 'c'
+
+	//第二种
+	copy(strRune[4:4+3], []rune("abc"))
 	cStr := string(strRune)
+
 	fmt.Println(cStr)
 }
 
