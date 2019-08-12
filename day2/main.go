@@ -89,3 +89,13 @@ func Gblq(number int) []int {
 	return s
 
 }
+
+// ArrayMap 函数 map() 函数是一个接受一个函数和一个列表作为参数的函数。函
+//数应用于列表中的每个元素，而一个新的包含有计算结果的列表被返回
+func ArrayMap(numbers []int, f func(int) int) []int {
+	for i, v := range numbers {
+		numbers[i] = f(v)
+	}
+
+	return numbers
+}

@@ -40,3 +40,12 @@ func TestGblq(t *testing.T) {
 	s := Gblq(20)
 	t.Log(s)
 }
+
+func TestArrayMap(t *testing.T) {
+	arr := []int{1, 3, 4}
+	mapArr := ArrayMap(arr, func(arg1 int) int {
+		return arg1 * arg1
+	})
+	t.Log(mapArr)
+
+}
