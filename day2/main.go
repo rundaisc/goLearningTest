@@ -99,3 +99,65 @@ func ArrayMap(numbers []int, f func(int) int) []int {
 
 	return numbers
 }
+
+//MaxOf 编写一个函数，找到 int slice ( []int ) 中的最大值。
+func MaxOf(numbers []int) int {
+	var max = 0
+	for _, v := range numbers {
+		if v > max {
+			max = v
+		}
+	}
+	return max
+
+}
+
+//MinOf 编写一个函数，找到 int slice ( []int ) 中的最小值。
+func MinOf(numbers []int) int {
+	if len(numbers) == 0 {
+		return 0
+	}
+	var min = numbers[0]
+	for _, v := range numbers {
+		if v < min {
+			min = v
+		}
+	}
+	return min
+
+}
+
+//ArrSort 冒泡排序
+func ArrSort(numbers []int) {
+	var temp int
+	len := len(numbers)
+	for i := 0; i < len; i++ {
+		for j := i + 1; j < len; j++ {
+			if numbers[i] > numbers[j] {
+				temp = numbers[i]
+				numbers[i] = numbers[j]
+				numbers[j] = temp
+				//或者
+				//	numbers[i], numbers[j] = numbers[j], numbers[i]
+			}
+		}
+	}
+	//	return numbers 因为是引用类型。这里不需要返回
+}
+
+//PlusTwo 编写一个函数返回另一个函数，返回的函数的作用是对一个整数 +2。函数的名称叫做 plusTwo
+func PlusTwo() func(int) int {
+	v := func(number int) int {
+		return number + 2
+	}
+	return v
+}
+
+//PlusX 使 PlusTwo 中的函数更加通用化，创建一个 plusX(y) 函数，返回一个函数用于对整数加上 x 。
+func PlusX(x int) func(int) int {
+	v := func(y int) int {
+		return x + y
+	}
+	return v
+
+}

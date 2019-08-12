@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -16,9 +15,10 @@ func TestPush(t *testing.T) {
 	for index := 1; index < 11; index++ {
 		s.Push(index)
 	}
-	fmt.Println(s)
+	t.Log(s)
 	for index := 1; index < 11; index++ {
-		fmt.Println(s.Pop())
+		t.Log(s.Pop())
+
 	}
 
 }
@@ -28,7 +28,7 @@ func TestToString(t *testing.T) {
 	for index := 1; index < 11; index++ {
 		s.Push(index)
 	}
-	fmt.Println(s.ToString())
+	t.Log(s.ToString())
 
 }
 
@@ -48,4 +48,35 @@ func TestArrayMap(t *testing.T) {
 	})
 	t.Log(mapArr)
 
+}
+
+func TestMaxOf(t *testing.T) {
+	arr := []int{9, 3, 4, 7, 11, 2}
+	max := MaxOf(arr)
+	t.Log(max)
+}
+
+func TestMinOf(t *testing.T) {
+	arr := []int{9, 3, 4, 7, 11, 2}
+	min := MinOf(arr)
+	t.Log(min)
+}
+
+func TestArrSort(t *testing.T) {
+	arr := []int{9, 3, 4, 7, 11, 2}
+	ArrSort(arr)
+	t.Log(arr)
+}
+
+func TestPlusTwo(t *testing.T) {
+	t.Log(PlusTwo()(3))
+	//或者
+	f := PlusTwo()
+	t.Log(f(3))
+}
+
+func TestPlusX(t *testing.T) {
+
+	f := PlusX(7)
+	t.Log(f(3))
 }
