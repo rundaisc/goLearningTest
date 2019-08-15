@@ -9,6 +9,7 @@ func TestStack_Push(t *testing.T) {
 	}
 	t.Log(s)
 	for index := 1; index < 11; index++ {
+
 		t.Log(s.Pop())
 
 	}

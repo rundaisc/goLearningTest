@@ -1,13 +1,10 @@
-package main
+package day2
 
 import (
 	"fmt"
 	"strconv"
 )
 
-func main() {
-
-}
 
 //SortNumber 编写函数，返回其（两个）参数正确的（自然）数字顺序：
 func SortNumber(a, b int) (int, int) {
