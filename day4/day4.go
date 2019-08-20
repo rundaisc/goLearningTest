@@ -29,6 +29,9 @@ func Map(arr []base,f func( base) base)[]base{
 
 	return  arr
 }
+
+
+
 //模拟 cat 读取文件
 func Cat(fileName string,showLine bool){
 	file,err := os.OpenFile(fileName,os.O_RDWR,0666)
