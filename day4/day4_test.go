@@ -14,3 +14,7 @@ func TestMap(t *testing.T) {
 	t.Log(newStrings)
 	t.Log(strings) //说明是引用类型
 }
+
+func  TestCat(t *testing.T) {
+	Cat("log.txt",true)
+}
