@@ -33,3 +33,39 @@ func First(){
 	close(c)
 
 }
+
+func  dup3(in <-chan  int) (<-chan int,<-chan int,<-chan int)  {
+	a,b,c := make(chan int ,2) ,make(chan int ,2),make(chan int ,2)
+	go func() {
+		for  {
+			x := <-in
+			a<-x
+			b<-x
+			c<-x
+		}
+	}()
+	return  a,b,c
+}
+
+func fib() <-chan int{
+	x := make(chan int,2)
+	a ,b ,c := dup3(x)
+	go func() {
+		x<-0
+		x<-1
+		<-a
+		for  {
+			x<- <-a+<-b
+		}
+	}()
+	return  c
+}
+
+func Runfib()  {
+	ch := fib()
+	for i:=0;i<20 ; i++ {
+		fmt.Println(<-ch)
+	}
+}
+
+
