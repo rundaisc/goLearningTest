@@ -60,7 +60,7 @@ func fib() <-chan int{
 	}()
 	return  c
 }
-
+//实现斐波拉契 使用channel
 func Runfib()  {
 	ch := fib()
 	for i:=0;i<20 ; i++ {
