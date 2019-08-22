@@ -1,5 +1,3 @@
-# goLearningTest
-golang学习练习题
 #### day1
 -  创建一个基于 for 的简单的循环。使其循环 10 次，并且使用 fmt 包打印出计数
 器的值。
@@ -11,13 +9,20 @@ golang学习练习题
 时，打印 “FizzBuzz” 。
 
 - 建立一个 Go 程序打印下面的内容（到 100 个字符）：
-A
-AA
-AAA
-AAAA
-AAAAA
-AAAAAA
-AAAAAAA
+
+            A
+            
+            AA
+            
+            AAA
+            
+            AAAA
+            
+            AAAAA
+            
+            AAAAAA
+            
+            AAAAAAA
 ...
 - 建立一个程序统计字符串里的字符数量：
 asSASA ddd dsjkdsjs dk
